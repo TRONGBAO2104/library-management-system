@@ -1,0 +1,18 @@
+# Visual Studio files
+*.sdf
+*.ncb
+Debug/
+Release/
+ipch/
+
+# Compiled files
+*.o
+*.exe
+*.out
+*.app
+
+# Data files
+*.dat
+
+# macOS files
+.DS_Store 
