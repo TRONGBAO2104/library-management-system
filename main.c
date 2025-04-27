@@ -2,6 +2,7 @@
 #include "reader.h"
 #include "book.h"
 #include "stats.h"
+#include "borrowing.h"
 
 /**
  * @brief Displays the main menu of the program
