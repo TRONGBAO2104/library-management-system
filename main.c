@@ -1,6 +1,7 @@
 #include "library.h"
 #include "reader.h"
 #include "book.h"
+#include "stats.h"
 
 /**
  * @brief Displays the main menu of the program
