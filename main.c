@@ -1,4 +1,5 @@
 #include "library.h"
+#include "book.h"
 
 /**
  * @brief Displays the main menu of the program
