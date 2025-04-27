@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -g
 TARGET = library_manager
-SRCS = main.c library.c book.c
+SRCS = main.c library.c reader.c book.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(TARGET)

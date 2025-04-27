@@ -1,4 +1,5 @@
 #include "library.h"
+#include "reader.h"
 #include "book.h"
 
 /**
