@@ -160,10 +160,10 @@ void borrowingManagementMenu(int bookCount, int readerCount, int *borrowingCount
 
         switch (choice) {
             case 1:
-                createBorrowing(bookCount, readerCount, borrowingCount);
+                createBorrowing(books, bookCount, readers, readerCount, borrowingCount);
                 break;
             case 2:
-                returnBooks(bookCount, readerCount, *borrowingCount);
+                returnBooks(books, bookCount, readers, readerCount, *borrowingCount);
                 break;
             case 3:
                 displayBorrowings(*borrowingCount);
@@ -243,6 +243,11 @@ int main() {
     int borrowingCount = 0;
     int choice;
 
+    // Load data from files
+    loadBooksFromFile(&bookCount);
+    loadReadersFromFile(&readerCount);
+    loadBorrowingsFromFile(&borrowingCount);
+
     do {
         displayMenu();
         scanf("%d", &choice);
@@ -268,6 +273,11 @@ int main() {
                 printf("Invalid choice! Please try again.\n");
         }
     } while (choice != 0);
+
+    // Save data to files
+    saveBooksToFile(bookCount);
+    saveReadersToFile(readerCount);
+    saveBorrowingsToFile(borrowingCount);
 
     return 0;
 } 

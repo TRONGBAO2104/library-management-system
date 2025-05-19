@@ -6,6 +6,10 @@
 #include <string.h>
 #include <time.h>
 #include <ctype.h>
+#include "constants.h"
+#include "book.h"
+#include "reader.h"
+#include "borrowing.h"
 
 // Maximum lengths for strings
 #define MAX_STRING 100
@@ -182,8 +186,6 @@ void searchBookByTitle(int bookCount);
 void searchBookByISBN(int bookCount);
 void searchBookByAuthor(int bookCount);
 void searchReaderByCMND(int readerCount);
-void createBorrowing(int bookCount, int readerCount, int *borrowingCount);
-void returnBooks(int bookCount, int readerCount, int borrowingCount);
 void displayBorrowings(int borrowingCount);
 void displayOverdueBorrowings(int borrowingCount);
 void displayBookStatistics(int bookCount);
@@ -194,5 +196,47 @@ int calculateFine(time_t dueDate, time_t returnDate);
 int calculateLostBookFine(float bookPrice);
 void displayCurrentlyBorrowedBooks(int borrowingCount);
 void searchBooksByReaderName(int borrowingCount);
+
+// Function declarations
+void displayMainMenu();
+void displayBookMenu();
+void displayReaderMenu();
+void displayBorrowingMenu();
+void displayStatsMenu();
+
+// Book management functions
+void bookManagement(int *bookCount);
+void updateBook(int bookCount);
+void deleteBook(int *bookCount);
+void searchBook(int bookCount);
+void searchBookByTitle(int bookCount);
+void searchBookByISBN(int bookCount);
+void displayAllBooks(int bookCount);
+
+// Reader management functions
+void readerManagement(int *readerCount);
+void addReader(int *readerCount);
+void updateReader(int readerCount);
+void deleteReader(int *readerCount);
+void searchReader(int readerCount);
+void searchReaderByCMND(int readerCount);
+void displayAllReaders(int readerCount);
+
+// Borrowing management functions
+void borrowingManagement(int bookCount, int readerCount, int *borrowingCount);
+void displayBorrowings(int borrowingCount);
+void displayOverdueBorrowings(int borrowingCount);
+
+// Statistics functions
+void statistics(int bookCount, int readerCount, int borrowingCount);
+void displayBookStatistics(int bookCount);
+void displayReaderStatistics(int readerCount);
+void displayGenderStatistics(int readerCount);
+void displayBorrowingStatistics(int borrowingCount);
+void displayOverdueStatistics(int borrowingCount);
+
+// File operations
+void saveAllData(int bookCount, int readerCount, int borrowingCount);
+void loadAllData(int *bookCount, int *readerCount, int *borrowingCount);
 
 #endif // LIBRARY_H 
